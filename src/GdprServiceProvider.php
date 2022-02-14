@@ -43,7 +43,7 @@ class GdprServiceProvider extends ServiceProvider
     {
         Route::group([
             'prefix' => config('gdpr.uri'),
-            'namespace' => app()->getNamespace().'Http\Controllers',
+            'namespace' => 'App\Http\Controllers',
             'middleware' => config('gdpr.middleware'),
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/routes/web.php');
