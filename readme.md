@@ -36,7 +36,7 @@ Table of contents
 ## Dependencies
 
 - PHP >= 7.0.0
-- Laravel >= 5.5
+- Laravel >= 8
 
 ## Installation
 
@@ -225,7 +225,7 @@ Calling `$customer->anonymize();` will also change the `buyer`-field on the rela
   
 ### Configuring Portable Data
 
-By default, the entire `toArray` form of the `App\User` model will be made available for download. If you would like to customize the downloadable data, you may override the `toPortableArray()` method on the model:
+By default, the entire `toArray` form of the `App\Models\User` model will be made available for download. If you would like to customize the downloadable data, you may override the `toPortableArray()` method on the model:
 
 ```php
 use Dialect\Gdpr\Portable;
@@ -253,7 +253,7 @@ class User extends Model
 
 ### Lazy Eager Loading Relationships
 
-You may need to include a relationship in the data that will be made available for download. To do so, add a `$gdprWith` property to your `App\User` model:
+You may need to include a relationship in the data that will be made available for download. To do so, add a `$gdprWith` property to your `App\Models\User` model:
 
 ```php
 use Dialect\Gdpr\Portable;
@@ -274,7 +274,7 @@ class User extends Model
 
 ### Hiding Attributes
 
-You may wish to limit the attributes, such as passwords, that are included in the downloadable data. To do so, add a `$gdprHidden` property to your `App\User` model:
+You may wish to limit the attributes, such as passwords, that are included in the downloadable data. To do so, add a `$gdprHidden` property to your `App\Models\User` model:
 
 ```php
 use Dialect\Gdpr\Portable;
